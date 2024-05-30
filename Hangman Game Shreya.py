@@ -4,7 +4,7 @@
 import time
 
 #rules of game
-#welcoming the user
+#user welcome
 print("Welcome to the Hangman Game")
 
 name = input("Player 01 enter your name: ")
@@ -26,39 +26,37 @@ time.sleep(0.5)
 #the selected word is CODEALPHA
 word = ("codealpha")
 
-#creates an variable with an empty value
+#create empty variable
 guesses = ''
 
-#determine the number of turns
+#number of turns
 turns = 10
 
 # Create a while loop
 
-#check if the turns are more than zero
 while turns > 0:         
 
-    # make a counter that starts with zero
+    # counter starting with zero
     failed = 0             
 
-    # for every character in secret_word    
+    # for every character in the word    
     for char in word:      
 
-    # see if the character is in the players guess
+    # see if the character is in the users guess
         if char in guesses:    
     
-        # print then out the character
+        # print the character
             print (char,end=" "),    
 
         else:
     
-        # if not found, print a dash
+        # if not found:
             print ("_ ",end=" "),     
        
-        # and increase the failed counter with one
+        # also increase failed counter with one
             failed += 1    
 
     # if failed is equal to zero
-
     # print You Won
     if failed == 0:
         print("\nYou guessed it. \nThe word is: " + word, "\nHurrayyy!!! You won!!")
@@ -75,15 +73,11 @@ while turns > 0:
  
      # turns counter decreases with 1 (now 9)
         turns -= 1        
- 
-    # print wrong
         print ("Sorry " + name, "that's incorrect.")  
  
-    # how many turns are left
+    # turns left
         print ("You have", + turns, 'more guesses' )
  
     # if the turns are equal to zero
         if turns == 0:           
-    
-        # print "You Lose"
             print ("You lost," + name,"\n Better luck next time!"  )
